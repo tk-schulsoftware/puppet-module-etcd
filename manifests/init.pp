@@ -59,6 +59,7 @@ class etcd (
   Stdlib::Absolutepath $config_path = '/etc/etcd.yaml',
   Hash $config = { 'data-dir' => '/var/lib/etcd' },
   Integer $max_open_files = 40000,
+  Boolean $allow_arm64 = false,
 ) {
   if $os != 'linux' {
     fail("Module etcd only supports Linux, not ${os}")
